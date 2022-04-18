@@ -140,7 +140,7 @@ export default function Merge() {
                 <table className="mx-auto w-full whitespace-nowrap rounded-lg bg-gray-100 dark:bg-gray-900  overflow-hidden">
                     <thead>
                       <tr className="text-gray-900 dark:text-gray-100 text-left bg-[#00C6ED]">
-                          <th className="p-[16px]">Reltal Nodes</th>
+                          <th className="p-[16px]">Active Listing</th>
                           <th></th>
                           <th></th>
                           <th></th>
@@ -191,7 +191,7 @@ export default function Merge() {
           <table className="mx-auto w-full whitespace-nowrap rounded-lg bg-gray-100 dark:bg-gray-900 ">
             <thead className="sticky, bg-gray-100 dark:bg-gray-900, t-0">
               <tr className="text-gray-900 dark:text-gray-100 text-left bg-[#00C6ED] ">
-                  <th colSpan={6} className="p-[16px]">My Nodes</th>
+                  <th colSpan={6} className="p-[16px]">Create Listing</th>
               </tr>
               <tr className="text-[16px] bg-gray-100 dark:bg-gray-900">
                   <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]">Node Type</span></th>

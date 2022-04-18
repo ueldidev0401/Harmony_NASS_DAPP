@@ -168,7 +168,7 @@ export default function Buynodes() {
         <span className="text-[24px] text-gray-900 dark:text-gray-100">Node Station 🚉️</span> 
         <div className="mt-[32px] ">
             <div className="md:flex md:flex-wrap bg-gray-100 dark:bg-gray-900 rounded-[12px] min-h-[172px] border-solid border-[#00C6ED] border-[1px] divide-white/40 divide-x-[1px] py-[16px] shadow-xl">
-              <div className="flex flex-col md:w-[35%] md:px-[100px] mb-4">
+              <div className="flex flex-col md:w-[40%] md:px-[50px] mb-4">
                   <span className="text-[20px] text-gray-900 dark:text-gray-100 mb-[20px] ml-4">Create A Node</span> 
                   
                   <label className="ml-10 text-gray-900 dark:text-gray-100"><input type="radio" name="swapType" checked={swapType=="hone"} onChange={()=>setSwapType("hone")}/> with HONE</label>
@@ -230,7 +230,7 @@ export default function Buynodes() {
                   
               </div>
               
-              <div className="flex flex-col px-[16px] mt-[20px] md:mt-[0px] m:w-[65%]">
+              <div className="flex flex-col px-[16px] mt-[20px] md:mt-[0px] md:w-[60%]">
                   <span className="text-[16px] text-gray-900 dark:text-gray-100">Tokenomic Details</span> 
                   <div className="md:flex md:first-letter:mt-[10px] divide-white/40 md:divide-x-[1px] py-[16px]">
                     <div className="md:mt-34px pr-[10px]">

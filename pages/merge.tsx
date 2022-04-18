@@ -58,6 +58,14 @@ export default function Merge() {
     e.preventDefault();
     let sum = nodeCount.nano * 10 + nodeCount.pico * 20 + nodeCount.mega * 50 + nodeCount.giga * 100;
     checked.splice(0,checked.length)
+    if ((nodeCount.nano == 0 && nodeCount.pico == 0 && nodeCount.mega == 0 && nodeCount.giga == 1) || 
+    (nodeCount.nano == 0 && nodeCount.pico == 0 && nodeCount.mega == 1 && nodeCount.giga == 0) || 
+    (nodeCount.nano == 0 && nodeCount.pico == 1 && nodeCount.mega == 0 && nodeCount.giga == 0) ||
+    (nodeCount.nano == 1 && nodeCount.pico == 0 && nodeCount.mega == 0 && nodeCount.giga == 0))
+      {
+        setNotification("Select Nodes Clearly");
+        return;
+      }
     if (sum == 20){
       setNotification("you can merge Pico Node");
       await getNodeIndex()
