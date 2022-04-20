@@ -81,10 +81,9 @@ export default function Nav(props:any) {
                   { title: "Buy Nodes", route: "/buynodes", icon:"/img/nodesIcon.svg" },
                   { title: "Merge", route: "/merge", icon:"/img/nodesIcon.svg" },
                   { title: "Rent", route: "/rent", icon:"/img/nodesIcon.svg" },
-                  { title: "My Nodes", route: "/mynodes", icon:"/img/nodesIcon.svg" },
                 ].map(({ route, title, icon }) => (
                   <Link href={route} passHref key={title}>
-                    <a className={cn("flex m-auto hover:bg-[#00c6ed] w-[188px] h-[46px] rounded-[10px] mx-[28px] mb-[14px] md:mb-[30px]", pathname == route?"bg-[#00c6ed]": "bg-gray-300 dark:bg-[#1f2937]")}>
+                    <a className={cn("flex m-auto hover:bg-[#00c6ed] w-[188px] h-[46px] rounded-[10px] mx-[28px] mb-[14px] md:mb-[30px]", pathname == route?"bg-[#00c6ed]": "bg-transparent dark:bg-[#1f2937]")}>
                       <img src={icon} alt="" className="mx-[23.5px] my-auto h-1/2" /> 
                       <div className="my-auto">
                         <div className="text-[14px] text-gray-900 dark:text-gray-100">{title}</div>
