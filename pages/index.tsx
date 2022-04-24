@@ -375,7 +375,7 @@ const series = [
             <div className="p-4 text-[14px]">
                 <div className="flex">
                   <img src="/icons/price_icon.svg" alt="" className="mr-[5px]" /> 
-                  <span className="text-[14px] text-gray-900 dark:text-gray-100 leading-8">$HONE Price</span>
+                  <span className="text-[14px] text-gray-900 dark:text-gray-100">$HONE Price</span>
                 </div>
             </div>
             <div className="pl-[32px]">
@@ -388,7 +388,7 @@ const series = [
             <div className="p-4 text-[14px] text-[#8a8c8f]">
                 <div className="flex">
                   <img src="/icons/marketcap_icon.svg" alt="" className="mr-[5px]" /> 
-                  <span className="text-[14px] text-gray-900 dark:text-gray-100 leading-8">Market Cap</span>
+                  <span className="text-[14px] text-gray-900 dark:text-gray-100">Market Cap</span>
                 </div>
             </div>
             <div className="pl-[32px]">
@@ -403,7 +403,7 @@ const series = [
             <div className="p-4 text-[14px] text-[#8a8c8f]">
                 <div className="flex">
                   <img src="/icons/circsupply_icon.svg" alt="" className="mr-[5px]" /> 
-                  <span className="text-[14px] text-gray-900 dark:text-gray-100 leading-8">Total Supply</span>
+                  <span className="text-[14px] text-gray-900 dark:text-gray-100">Total Supply</span>
                 </div>
             </div>
             <div className="pl-[32px]">
@@ -418,7 +418,7 @@ const series = [
             <div className="p-4 text-[14px] text-[#8a8c8f]">
                 <div className="flex">
                   <img src="/icons/totalnode_icon.svg" alt="" className="mr-[5px]" /> 
-                  <span className="text-[14px] text-gray-900 dark:text-gray-100 leading-8">Total Nodes</span></div>
+                  <span className="text-[14px] text-gray-900 dark:text-gray-100">Total Nodes</span></div>
             </div>
             <div className="pl-[32px]">
                 <div className="flex justify-center font-medium text-2xl text-gray-900 dark:text-gray-100 mr-[16px]">
@@ -432,7 +432,7 @@ const series = [
             <div className="p-4 text-[14px] text-[#8a8c8f]">
                 <div className="flex">
                   <img src="/icons/totalnode_icon.svg" alt="" className="mr-[5px]" /> 
-                  <span className="text-[14px] text-gray-900 dark:text-gray-100 leading-8">Total Holder</span></div>
+                  <span className="text-[14px] text-gray-900 dark:text-gray-100">Total Holder</span></div>
             </div>
             <div className="pl-[32px]">
                 <div className="flex justify-center font-medium text-2xl text-gray-900 dark:text-gray-100 mr-[16px]">
@@ -446,7 +446,7 @@ const series = [
             <div className="p-4 text-[14px] text-[#8a8c8f]">
                 <div className="flex">
                   <img src="/icons/totalnode_icon.svg" alt="" className="mr-[5px]" /> 
-                  <span className="text-[14px] text-gray-900 dark:text-gray-100 leading-8">24Hr Changes</span></div>
+                  <span className="text-[14px] text-gray-900 dark:text-gray-100">24Hr Changes</span></div>
             </div>
             <div className="pl-[32px]">
                 <div className="flex justify-center font-medium text-2xl text-gray-900 dark:text-gray-100 mr-[16px]">
