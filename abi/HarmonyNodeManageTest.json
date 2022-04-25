@@ -227,6 +227,11 @@
             "type": "bool"
           },
           {
+            "internalType": "bool",
+            "name": "offerStatus",
+            "type": "bool"
+          },
+          {
             "internalType": "uint256",
             "name": "deadline",
             "type": "uint256"

@@ -251,6 +251,7 @@ function useToken() {
         info.countTotal = ret[index++]
         if(info.countTotal>0) {
           info.totalNodes = ret[index++]
+          console.log(info.totalNodes);
         }
         info.lendOffers = ret[index++]
         info.lendOffersAll = ret[index++]
