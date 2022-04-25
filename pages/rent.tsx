@@ -252,7 +252,8 @@ export default function Merge() {
                       <td className="py-[12px] pl-[20px]">{getDate(Number(formatNumber(node.deadline)))}</td>
                       <td>
                         {info.approvedUSDC?
-                          <button disabled={node.lendStatus == true} 
+                        node.lendStatus == true?<div></div>:
+                          <button 
                             className={classNames((node.lendStatus == true)?"text-gray-900 dark:text-gray-100 bg-[#d1d5db] dark:bg-[#4e4e4e]":"text-gray-900 dark:text-gray-100 hover:bg-[#00C6ED] dark:bg-[#00C6ED]","text-center font-normal text-[16px] border-solid border-[#00C6ED] border-[1px] rounded-[14px] px-4 py-2")} 
                             onClick={handlePayForAMonth}>
                             Pay MT Fee
