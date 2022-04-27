@@ -65,7 +65,14 @@ export default function Merge() {
 
   const handleRemoveLendOffer = (e:any) => {
     let tr = e.target.closest("tr")
-    const offerIndex = tr.dataset.key
+    const nodeIndex = tr.dataset.key
+    let offerIndex;
+    lendOffers.forEach((itme:any) => {
+      if(nodeIndex.toString() === itme.nodeIndex.toString()){
+        offerIndex = itme.offerIndex;
+      }
+    }) 
+
     setLoading(true)
     try {
       closeLendOffer(offerIndex).then(async () => {
@@ -167,6 +174,23 @@ export default function Merge() {
     const d = new Date( timestamp * 1000);
     return d.toDateString();
   }
+ // {node.borrowStatus == false && node.lendStatus ==false ? "Owned": node.lendStatus == true ? "Lend": "Rented" }
+  const renderStatus = (offer:any, borrow:any, lend:any) => {
+    console.log("myNode", myNodes)
+    if (offer == true){
+      return "Listed";
+    }
+    else if (borrow == true){
+      return "Rent";
+    }
+    else if (lend == true){
+      return "Lend";
+    }
+    else{
+      return "Owned";
+    }
+
+  }
   return (
     <div className={classNames(loading?"loading":"")}>
       <div className="flex flex-col md:mx-[197px] mx-[10%] mt-[30px] md:mt-4">
@@ -238,6 +262,7 @@ export default function Merge() {
                   <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]">Rent Deadline</span></th>
                   <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]">Dead Line</span></th>
                   <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]"> Pay</span></th>
+                  <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]"> Reject</span></th>
               </tr>
             </thead>
             <tbody className="divide-y-[1px] px-[16px] border border-2  text-gray-900 dark:text-gray-100">
@@ -246,23 +271,36 @@ export default function Merge() {
                 info.totalNodes.map((node:any) => 
                     <tr key={node.nodeIndex.toString()} data-key={node.nodeIndex.toString()} className="border text-left text-[16px] ">
                       <td className="py-[12px] pl-[20px]">{node.nodeType==0?"Nano":node.nodeType==1?"Pico":node.nodeType==2?"Mega":"Giga"} Node</td>
-                      <td className="py-[12px] pl-[20px]">{node.borrowStatus == false && node.lendStatus ==false ? "Owned": node.lendStatus == true ? "Lend": "Rented" }</td>
+                      <td className="py-[12px] pl-[20px]">
+                        {renderStatus(node.offerStatus, node.borrowStatus, node.lendStatus)}
+                      </td>
                       <td className="py-[12px] pl-[20px]">{node.borrowStatus == true || node.lendStatus == true? getDate(Number(formatNumber(node.rentDeadline))): "" }</td>
                       {/* <td className="py-[12px] pl-[20px]">{node.borrowStatus == true ? checkedIcon: "" }</td> */}
                       <td className="py-[12px] pl-[20px]">{getDate(Number(formatNumber(node.deadline)))}</td>
                       <td>
                         {info.approvedUSDC?
-                        node.lendStatus == true?<div></div>:
+                        node.lendStatus == false?
                           <button 
                             className={classNames((node.lendStatus == true)?"text-gray-900 dark:text-gray-100 bg-[#d1d5db] dark:bg-[#4e4e4e]":"text-gray-900 dark:text-gray-100 hover:bg-[#00C6ED] dark:bg-[#00C6ED]","text-center font-normal text-[16px] border-solid border-[#00C6ED] border-[1px] rounded-[14px] px-4 py-2")} 
                             onClick={handlePayForAMonth}>
                             Pay MT Fee
-                          </button>:
-                          <button disabled={node.lendStatus == true} 
+                          </button>:<div></div>
+                          :<button disabled={node.lendStatus == true} 
                             className={classNames((node.lendStatus == true)?"text-gray-900 dark:text-gray-100 bg-[#d1d5db] dark:bg-[#4e4e4e]":"text-gray-900 dark:text-gray-100 hover:bg-[#00C6ED] dark:bg-[#00C6ED]","text-center font-normal text-[16px] border-solid border-[#00C6ED] border-[1px] rounded-[14px] px-4 py-2")} 
                             onClick={handleApproveUSDC}>
                             Approve
                           </button>
+                        }
+                      </td>
+                      <td>
+                        {
+                        node.offerStatus == true?
+                          <button 
+                            className={"text-center font-normal text-[16px] border-solid border-[#00C6ED] border-[1px] rounded-[14px] px-4 py-2"} 
+                            onClick={handleRemoveLendOffer}
+                            >
+                            Reject
+                          </button>:<div></div>
                         }
                       </td>
                     </tr>
@@ -284,8 +322,31 @@ export default function Merge() {
               </tr>
             </thead>
             <tbody className="divide-y-[1px] px-[16px] border border-2 text-gray-900 dark:text-gray-100  dark:border-gray-700">
-              {
+            {
+              
                 myNodes.length>0?
+                  myNodes.map((node:any) => 
+                  node.offerIndex?
+                    "":
+                    <tr key={node.nodeIndex.toString()} data-key={node.nodeIndex.toString()} className="border text-left text-[16px] ">
+                      <td className="py-[12px] pl-[20px]">{node.nodeType==0?"Nano":node.nodeType==1?"Pico":node.nodeType==2?"Mega":"Giga"} Node</td>
+                      <td className="py-[12px] pl-[20px]"><input type="text" min="1" className="p-2 border-2 rounded w-[100px] md:w-full bg-gray-100 dark:bg-gray-900 outline-gray-100 dark:outline-gray-900" defaultValue="" /></td>
+                      <td className="py-[12px] pl-[20px]"><input type="text" className="p-2 border-2 rounded w-[100px] md:w-full bg-gray-100 dark:bg-gray-900" defaultValue="" /></td>
+                      <td className="py-[12px] pl-[20px]">
+                        <button onClick={handleSetLendOffer} className="text-gray-900 dark:text-gray-100 dark:bg-[#00C6ED] hover:bg-[#00C6ED] text-center font-normal text-[16px] border-solid border-[#00C6ED] border-[1px] rounded-[14px] px-4 py-2"> 
+                          Lend
+                        </button>
+                      </td>
+                    </tr>
+                  ):
+                  <tr>
+                    <td colSpan={5} className="text-center">
+                      There is no listed data
+                    </td>
+                  </tr>
+              }
+              {
+              /*  myNodes.length>0?
                   myNodes.map((node:any) => 
                   node.offerIndex?
                     <tr key={node.nodeIndex.toString()} data-key={node.offerIndex.toString()} className="border text-left text-[16px] dark:border-gray-700">
@@ -313,7 +374,7 @@ export default function Merge() {
                     <td colSpan={5} className="text-center">
                       There is no listed data
                     </td>
-                  </tr>
+                  </tr>*/
               }
             </tbody>
           </table>
