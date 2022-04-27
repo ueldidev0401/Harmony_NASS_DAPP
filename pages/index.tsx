@@ -266,7 +266,7 @@ const series = [
         <h2 className="text-2xl font-semibold leading-tight text-gray-900 dark:text-gray-100 mb-5">
           My Nodes 🗻️
         </h2>
-        <div className = "grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
+        <div className = "grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-6 gap-4 items-center">
           <div className = "inline-flex items-center flex-col relative overflow-x-auto shadow-md sm:rounded-lg">
             <table className="w-full text-sm text-left text-gray-900 dark:text-gray-100 dark:text-white">
               <thead>
@@ -304,6 +304,20 @@ const series = [
           <div className="flex flex-col flex-1 bg-gray-100 dark:bg-gray-900 rounded-[12px] border-none h-[116px] mb-[30px] md:mb-[0px] shadow-xl">
             <div className="p-4 text-[14px] text-[#8a8c8f]">
                 <div className="flex">
+                  <img src="/icons/balance_icon.svg" alt="" className="mr-[5px]" /> 
+                  <span className="text-[14px] text-gray-900 dark:text-gray-100">My $GHONE Balance</span></div>
+            </div>
+            <div className="v-card__text pl-[32px]">
+                <div className="flex font-medium text-gray-900 dark:text-gray-100 mr-[16px]">
+                  <div className="font-medium text-xl text-gray-900 dark:text-gray-100 mr-[16px]">
+                      {info.balanceOfGHone?formatNumber(info.balanceOfGHone/1e18,0,3):0} GHONE
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div className="flex flex-col flex-1 bg-gray-100 dark:bg-gray-900 rounded-[12px] border-none h-[116px] mb-[30px] md:mb-[0px] shadow-xl">
+            <div className="p-4 text-[14px] text-[#8a8c8f]">
+                <div className="flex">
                   <img src="/icons/dailyrewards_icon.svg" alt="" className="mr-[5px]" /> 
                   <span className="text-[14px] text-gray-900 dark:text-gray-100">Daily Rewards</span></div>
             </div>
@@ -328,7 +342,7 @@ const series = [
                       <div className="font-medium text-xl text-gray-900 dark:text-gray-100 mr-[16px] leading-4">
                         {info.claimableAmount?formatNumber(info.claimableAmount/1e18,0,2):0} HONE
                       </div>
-                      <button onClick={claim} className="text-gray-900 dark:text-gray-100 dark:bg-[#00C6ED] hover:bg-[#00C6ED] text-center font-normal text-[16px] border-solid border-[#00C6ED] border-[1px] rounded-[14px] px-2 py-1 mr-4 float-right" >
+                      <button onClick={claim} className="text-gray-900 dark:text-gray-100 dark:bg-[#00C6ED] hover:bg-[#00C6ED] text-center font-normal text-[16px] border-solid border-[#00C6ED] border-[1px] rounded-[14px] px-2 py-1 mr-2 float-right" >
                         Claim
                       </button>
                     </div>
@@ -352,10 +366,10 @@ const series = [
                           {maintenanceFee} USDC
                         </div>
                         {info.approvedUSDC?
-                          <button onClick={handlePayAll} className="text-gray-900 dark:text-gray-100 dark:bg-[#00C6ED] hover:bg-[#00C6ED] text-center font-normal text-[16px] border-solid border-[#00C6ED] border-[1px] rounded-[14px] px-4 py-1 mr-4 float-right" >
+                          <button onClick={handlePayAll} className="text-gray-900 dark:text-gray-100 dark:bg-[#00C6ED] hover:bg-[#00C6ED] text-center font-normal text-[16px] border-solid border-[#00C6ED] border-[1px] rounded-[14px] px-4 py-1 mr-2 float-right" >
                             Pay
                           </button>:
-                          <button onClick={handleApproveUSDC} className="text-gray-900 dark:text-gray-100 dark:bg-[#00C6ED] hover:bg-[#00C6ED] text-center font-normal text-[16px] border-solid border-[#00C6ED] border-[1px] rounded-[14px] px-4 py-1 mr-4 float-right" >
+                          <button onClick={handleApproveUSDC} className="text-gray-900 dark:text-gray-100 dark:bg-[#00C6ED] hover:bg-[#00C6ED] text-center font-normal text-[16px] border-solid border-[#00C6ED] border-[1px] rounded-[14px] px-4 py-1 mr-2 float-right" >
                             Approve
                           </button>
                         }

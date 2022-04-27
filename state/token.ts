@@ -5,7 +5,7 @@ import { useEffect, useState } from "react" // React
 import { createContainer } from "unstated-next" // State management
 import { BigNumber, formatFixed } from "@ethersproject/bignumber"
 import { parseEther, formatEther, parseUnits } from "ethers/lib/utils"
-import { CONTRACT_HONE, CONTRACT_NODEMANAGER, CONTRACT_NFT, CONTRACT_MULTICALL, TOKEN_MAINTENANCE } from "./address"
+import { CONTRACT_HONE, CONTRACT_GHONE, CONTRACT_NODEMANAGER, CONTRACT_NFT, CONTRACT_MULTICALL, TOKEN_MAINTENANCE } from "./address"
 
 const NodeManagerABI = require("abi/HarmonyNodeManageTest.json")
 const HONEABI = require("abi/HONE.json")
@@ -178,6 +178,8 @@ function useToken() {
 
     const Hone = new Contract(CONTRACT_HONE, ERC20ABI)
 
+    const GHone = new Contract(CONTRACT_GHONE, ERC20ABI)
+
     const Pair = info.pairAddress? new Contract(info.pairAddress, PairABI): undefined
       
     const NFT = new Contract(
@@ -200,6 +202,7 @@ function useToken() {
 
     if(address) {
       calls.push(Hone.balanceOf(address))
+      calls.push(GHone.balanceOf(address))
       calls.push(Hone.allowance(address,NodeManager.address))
       calls.push(NFT.isApprovedForAll(address, NodeManager.address))
       calls.push(TokenMaintenance.allowance(address, NodeManager.address))
@@ -243,6 +246,8 @@ function useToken() {
       
       if(address) {
         info.balanceOfHone = ret[index++]
+        info.balanceOfGHone = ret[index++]
+        console.log("GHONE balance",info.balanceofGHone)
         info.approvedHone = BigNumber.from(ret[index++]).gt(0)
         info.approvedNFT = ret[index++]
         info.approvedUSDC = BigNumber.from(ret[index++]).gt(0)
