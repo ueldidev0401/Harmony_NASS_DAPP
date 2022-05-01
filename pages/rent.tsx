@@ -66,7 +66,7 @@ export default function Merge() {
   const handleRemoveLendOffer = (e:any) => {
     let tr = e.target.closest("tr")
     const nodeIndex = tr.dataset.key
-    let offerIndex;
+    let offerIndex = 0;
     lendOffers.forEach((itme:any) => {
       if(nodeIndex.toString() === itme.nodeIndex.toString()){
         offerIndex = itme.offerIndex;
