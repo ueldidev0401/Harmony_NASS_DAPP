@@ -446,7 +446,7 @@ const series = [
             <div className="p-4 text-[14px] text-[#8a8c8f]">
                 <div className="flex">
                   <img src="/icons/totalnode_icon.svg" alt="" className="mr-[5px]" /> 
-                  <span className="text-[14px] text-gray-900 dark:text-gray-100">Total Holder</span></div>
+                  <span className="text-[14px] text-gray-900 dark:text-gray-100">Total Holders</span></div>
             </div>
             <div className="pl-[32px]">
                 <div className="flex justify-center font-medium text-2xl text-gray-900 dark:text-gray-100 mr-[16px]">

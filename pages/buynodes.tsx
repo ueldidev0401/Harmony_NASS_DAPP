@@ -234,12 +234,12 @@ export default function Buynodes() {
                   <span className="text-[16px] text-gray-900 dark:text-gray-100">Tokenomic Details</span> 
                   <div className="md:flex md:first-letter:mt-[10px] divide-white/40 md:divide-x-[1px] py-[16px]">
                     <div className="md:mt-34px pr-[10px]">
-                        <div className="flex md:mt-[10px] md:pt-[10px]"><span className="text-[#00C6ED] text-[12px]">Cost</span> <span className="text-[#00C6ED] text-[12px] mx-[4px]">=</span> <span className="text-[12px] text-gray-900 dark:text-gray-100"> {formatEther(honeAmount)}$HONE / Node</span></div>
+                        <div className="flex md:mt-[10px] md:pt-[10px]"><span className="text-[#00C6ED] text-[12px]">Cost</span> <span className="text-[#00C6ED] text-[12px] mx-[4px]">=</span> <span className="text-[12px] text-gray-900 dark:text-gray-100"> {formatEther(honeAmount)} $HONE / Node</span></div>
                         <div className="flex mt-[3px]"><span className="text-[#00C6ED] text-[12px]">Yield</span> <span className="text-[#00C6ED] text-[12px] mx-[4px]">=</span> <span className="text-[12px] text-gray-900 dark:text-gray-100">{Number(formatEther(honeAmount))*rewardPercent/10000} $HONE / Claim (a day)</span></div>
-                        <div className="flex mt-[3px]"><span className="text-[#00C6ED] text-[12px]">Deadline</span> <span className="text-[#00C6ED] text-[12px] mx-[4px]">=</span> <span className="text-[12px] text-gray-900 dark:text-gray-100">{deadLine} days</span></div>
+                        <div className="flex mt-[3px]"><span className="text-[#00C6ED] text-[12px]">ROI</span> <span className="text-[#00C6ED] text-[12px] mx-[4px]">=</span> <span className="text-[12px] text-gray-900 dark:text-gray-100">{deadLine} days</span></div>
                     </div>
                     <div className="flex flex-col md:pl-[10px]">
-                        <span className="text-[#00C6ED] text-[12px] mt-[16px]">Distribution:</span> 
+                        <span className="text-[#00C6ED] text-[12px] mt-[16px]">Distribution of $HONE:</span> 
                         <div className="flex ml-[17px] mt-[8px]"><span className="text-[12px] text-gray-900 dark:text-gray-100 mr-[6px]">→</span> <span className="text-[#00c6ed] text-[12px]">Rewards Pool = </span> <span className="text-[12px] text-gray-900 dark:text-gray-100 !ml-[4px]"> 65%</span></div>
                         <div className="flex ml-[17px]"><span className="text-[12px] text-gray-900 dark:text-gray-100 mr-[6px]">→</span> <span className="text-[#00c6ed] text-[12px]">Burn = </span> <span className="text-[12px] text-gray-900 dark:text-gray-100 !ml-[4px]"> 25%</span></div>
                         <div className="flex ml-[17px]">

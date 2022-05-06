@@ -30,7 +30,7 @@ export default function Merge() {
     giga:0
   });
 
-  const [notification, setNotification] = useState("Select Nodes Clearly");
+  const [notification, setNotification] = useState("Select Nodes Carefully");
   const cards2 = [
     {
       name: "Nano Node",
@@ -63,7 +63,7 @@ export default function Merge() {
     (nodeCount.nano == 0 && nodeCount.pico == 1 && nodeCount.mega == 0 && nodeCount.giga == 0) ||
     (nodeCount.nano == 1 && nodeCount.pico == 0 && nodeCount.mega == 0 && nodeCount.giga == 0))
       {
-        setNotification("Select Nodes Clearly");
+        setNotification("Select Nodes Carefully");
         return;
       }
     if (sum == 20){
@@ -79,7 +79,7 @@ export default function Merge() {
       getNodeIndex()
       handleUpgrade(3)
     }else {
-      setNotification("Select Nodes Clearly");
+      setNotification("Select Nodes Carefully");
     }
   }
 
