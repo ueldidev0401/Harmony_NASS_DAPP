@@ -260,7 +260,7 @@ export default function Merge() {
                   <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]">Status</span></th>
                   {/* <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]">Lend</span></th> */}
                   <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]">Rent Deadline</span></th>
-                  <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]">Dead Line</span></th>
+                  <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]">MT Fee Deadline</span></th>
                   <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]"> Pay</span></th>
                   <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]"> Reject</span></th>
               </tr>

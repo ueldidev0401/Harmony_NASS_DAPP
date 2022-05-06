@@ -266,7 +266,7 @@ const series = [
         <h2 className="text-2xl font-semibold leading-tight text-gray-900 dark:text-gray-100 mb-5">
           My Nodes 🗻️
         </h2>
-        <div className = "grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-6 gap-4 items-center">
+        <div className = "grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 items-center">
           <div className = "inline-flex items-center flex-col relative overflow-x-auto shadow-md sm:rounded-lg">
             <table className="w-full text-sm text-left text-gray-900 dark:text-gray-100 dark:text-white">
               <thead>
