@@ -472,7 +472,7 @@ const series = [
           </div> 
         </div>
         <div className = "grid grid-cols-2 gap-5 overflow-hidden">
-          <Chart options={options} series={series} type='line' height={400} width = {600} />
+         {/*<Chart options={options} series={series} type='line' height={400} width = {600} /> */} 
         </div>
       </div>
       
