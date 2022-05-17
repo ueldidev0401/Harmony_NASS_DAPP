@@ -23,7 +23,9 @@ export default function Home() {
   
   const totalSupply = info.totalSupply? info.totalSupply : BigNumber.from(0)
   const priceHONE = info.priceHONE? info.priceHONE : BigNumber.from(0)
-  const marketCap = totalSupply*priceHONE/1e18
+  // const marketCap = totalSupply*priceHONE/1e18
+  const marketCap = 0 // temporary
+  info.priceHONE = 0  // temporary
 
   let nanoNodesOwned = [], nanoNodesRent = [], picoNodesOwned = [], picoNodesRent = [], megaNodesOwned = [], megaNodesRent=[], gigaNodesOwned=[],gigaNodesRent=[]
   if(info.totalNodes){

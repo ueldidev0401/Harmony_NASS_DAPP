@@ -168,7 +168,7 @@ function useToken() {
   
 
   const multicall = async () => {
-    await setMulticallAddress(31337,CONTRACT_MULTICALL)
+    await setMulticallAddress(1666600000,CONTRACT_MULTICALL)
     const Multicall = new Provider(provider??defaultProvider)
     await Multicall.init()
     const NodeManager = new Contract(
@@ -247,7 +247,6 @@ function useToken() {
       if(address) {
         info.balanceOfHone = ret[index++]
         info.balanceOfGHone = ret[index++]
-        console.log("GHONE balance",info.balanceofGHone)
         info.approvedHone = BigNumber.from(ret[index++]).gt(0)
         info.approvedNFT = ret[index++]
         info.approvedUSDC = BigNumber.from(ret[index++]).gt(0)
