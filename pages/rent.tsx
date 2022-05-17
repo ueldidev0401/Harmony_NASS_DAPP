@@ -262,7 +262,7 @@ export default function Merge() {
                   <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]">Rent Deadline</span></th>
                   <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]">MT Fee Deadline</span></th>
                   <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]"> Pay</span></th>
-                  <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]"> Reject</span></th>
+                  <th className="pt-[12px] pl-[16px] text-left"><span className="text-[#00c6ed]"> Action</span></th>
               </tr>
             </thead>
             <tbody className="divide-y-[1px] px-[16px] border border-2  text-gray-900 dark:text-gray-100">
@@ -299,7 +299,7 @@ export default function Merge() {
                             className={"text-center font-normal text-[16px] border-solid border-[#00C6ED] border-[1px] rounded-[14px] px-4 py-2"} 
                             onClick={handleRemoveLendOffer}
                             >
-                            Reject
+                            Remove Listing
                           </button>:<div></div>
                         }
                       </td>
@@ -334,7 +334,7 @@ export default function Merge() {
                       <td className="py-[12px] pl-[20px]"><input type="text" className="p-2 border-2 rounded w-[100px] md:w-full bg-gray-100 dark:bg-gray-900" defaultValue="" /></td>
                       <td className="py-[12px] pl-[20px]">
                         <button onClick={handleSetLendOffer} className="text-gray-900 dark:text-gray-100 dark:bg-[#00C6ED] hover:bg-[#00C6ED] text-center font-normal text-[16px] border-solid border-[#00C6ED] border-[1px] rounded-[14px] px-4 py-2"> 
-                          Lend
+                          List Node
                         </button>
                       </td>
                     </tr>
